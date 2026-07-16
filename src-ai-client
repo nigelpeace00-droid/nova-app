@@ -1,0 +1,50 @@
+import axios from "axios";
+
+
+const API_URL =
+"YOUR_NOVA_API_URL";
+
+
+
+export default {
+
+
+async ask(message){
+
+
+try{
+
+
+const response =
+await axios.post(
+
+API_URL,
+
+{
+
+message:message
+
+}
+
+);
+
+
+
+return response.data.reply;
+
+
+}
+
+
+catch(error){
+
+
+return "I cannot reach my AI server right now.";
+
+}
+
+
+}
+
+
+};
