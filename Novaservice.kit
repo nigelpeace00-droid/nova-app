@@ -1,0 +1,84 @@
+package com.nova.aiassistant
+
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
+import androidx.core.app.NotificationCompat
+
+
+class NovaVoiceService : Service() {
+
+
+    override fun onCreate(){
+
+        super.onCreate()
+
+
+        startForeground(
+            10,
+            createNotification()
+        )
+
+
+        startWakeListener()
+
+    }
+
+
+
+    private fun startWakeListener(){
+
+        /*
+        
+        CONNECT WAKE WORD ENGINE HERE
+        
+        Trigger phrase:
+        
+        "Hey Nova"
+        
+        When detected:
+        send event to React Native
+        
+        */
+
+    }
+
+
+
+    private fun createNotification(){
+
+
+        return NotificationCompat.Builder(
+            this,
+            "nova_channel"
+        )
+
+        .setContentTitle(
+            "Nova is active"
+        )
+
+        .setContentText(
+            "Listening for Hey Nova"
+        )
+
+        .setSmallIcon(
+            android.R.drawable.ic_btn_speak_now
+        )
+
+        .build()
+
+
+    }
+
+
+
+    override fun onBind(
+        intent:Intent?
+    ):IBinder?{
+
+        return null
+
+    }
+
+
+}
