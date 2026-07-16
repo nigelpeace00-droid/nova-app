@@ -1,0 +1,141 @@
+import React, {useState} from "react";
+
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet
+} from "react-native";
+
+
+import SpeechEngine from "../voice/SpeechEngine";
+
+import VoiceController from "../voice/VoiceController";
+
+import CommandEngine from "../commands/CommandEngine";
+
+
+
+export default function NovaHome(){
+
+
+const [status,setStatus] =
+useState("Say: Hey Nova");
+
+
+
+async function activateNova(){
+
+
+setStatus("Listening...");
+
+
+const command =
+await VoiceController.listen();
+
+
+
+if(command){
+
+
+const response =
+await CommandEngine.process(
+command
+);
+
+
+setStatus(response);
+
+
+SpeechEngine.speak(
+response
+);
+
+
+}
+
+else{
+
+
+setStatus(
+"No command detected"
+);
+
+
+}
+
+
+}
+
+
+
+return(
+
+<View style={styles.container}>
+
+
+<Text style={styles.logo}>
+NOVA
+</Text>
+
+
+<Text style={styles.status}>
+{status}
+</Text>
+
+
+
+<Button
+
+title="Hey Nova"
+
+onPress={activateNova}
+
+/>
+
+
+</View>
+
+);
+
+}
+
+
+
+const styles =
+StyleSheet.create({
+
+container:{
+
+flex:1,
+
+justifyContent:"center",
+
+alignItems:"center",
+
+padding:30
+
+},
+
+
+logo:{
+
+fontSize:50,
+
+fontWeight:"bold"
+
+},
+
+
+status:{
+
+fontSize:18,
+
+margin:30,
+
+textAlign:"center"
+
+}
+
+
+});
