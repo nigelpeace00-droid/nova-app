@@ -1,0 +1,66 @@
+import AIClient from "../ai/AIClient";
+
+import Memory from "../memory/Memory";
+
+import ReminderManager from "../reminders/ReminderManager";
+
+
+
+export default {
+
+
+async process(text){
+
+
+const command =
+text.toLowerCase();
+
+
+
+if(command.includes("remember")){
+
+
+await Memory.save(
+
+"last_command",
+
+text
+
+);
+
+
+
+return "I saved that information.";
+
+}
+
+
+
+if(command.includes("remind me")){
+
+
+await ReminderManager.create(
+
+"Nova Reminder",
+
+text
+
+);
+
+
+
+return "Reminder created.";
+
+}
+
+
+
+return await AIClient.ask(
+text
+);
+
+
+}
+
+
+};
