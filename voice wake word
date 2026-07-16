@@ -1,0 +1,27 @@
+export default {
+
+
+start(){
+
+
+console.log(
+"Listening for Hey Nova..."
+);
+
+
+},
+
+
+
+stop(){
+
+
+console.log(
+"Wake word stopped"
+);
+
+
+}
+
+
+};
