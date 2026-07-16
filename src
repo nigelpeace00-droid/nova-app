@@ -1,0 +1,8 @@
+src/
+├── screens/
+├── voice/
+├── ai/
+├── commands/
+├── memory/
+├── reminders/
+└── notifications/
