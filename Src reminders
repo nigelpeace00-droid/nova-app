@@ -1,0 +1,46 @@
+import * as Notifications
+from "expo-notifications";
+
+
+
+export default {
+
+
+async create(title,message){
+
+
+await Notifications.requestPermissionsAsync();
+
+
+
+await Notifications.scheduleNotificationAsync({
+
+
+content:{
+
+
+title:title,
+
+
+body:message
+
+
+},
+
+
+trigger:{
+
+
+seconds:60
+
+
+}
+
+
+});
+
+
+}
+
+
+};
