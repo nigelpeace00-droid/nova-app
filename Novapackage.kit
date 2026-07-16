@@ -1,0 +1,53 @@
+package com.nova.aiassistant
+
+
+import com.facebook.react.*
+
+import com.facebook.react.bridge.*
+
+
+
+class NovaPackage:
+
+ReactPackage {
+
+
+
+override fun createNativeModules(
+
+context:ReactApplicationContext
+
+):
+
+List<NativeModule>{
+
+
+return listOf(
+
+NovaWakeModule(context),
+
+DeviceControlModule(context)
+
+)
+
+
+}
+
+
+
+override fun createViewManagers(
+
+context:ReactApplicationContext
+
+):
+
+List<ViewManager<*,*>>{
+
+
+return emptyList()
+
+
+}
+
+
+}
