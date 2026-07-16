@@ -1,0 +1,58 @@
+import {
+Audio
+} from "expo-av";
+
+
+
+export default {
+
+
+async listen(){
+
+
+try{
+
+
+const permission =
+await Audio.requestPermissionsAsync();
+
+
+
+if(!permission.granted){
+
+return null;
+
+}
+
+
+
+/*
+Placeholder speech recognition.
+
+A native Android speech engine
+will replace this later.
+*/
+
+
+return "hello nova";
+
+
+}
+
+
+catch(error){
+
+
+console.log(error);
+
+
+return null;
+
+
+}
+
+
+}
+
+
+};
