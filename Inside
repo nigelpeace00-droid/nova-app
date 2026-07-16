@@ -1,0 +1,9 @@
+<service
+
+android:name=".NovaVoiceService"
+
+android:foregroundServiceType="microphone"
+
+android:exported="false"
+
+/>
