@@ -1,0 +1,41 @@
+import {
+NativeModules
+}
+from "react-native";
+
+
+const {
+NovaWake
+}
+=
+NativeModules;
+
+
+
+export default {
+
+
+start(){
+
+if(NovaWake){
+
+NovaWake.startListening();
+
+}
+
+},
+
+
+
+stop(){
+
+if(NovaWake){
+
+NovaWake.stopListening();
+
+}
+
+}
+
+
+};
