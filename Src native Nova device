@@ -1,0 +1,43 @@
+import {
+NativeModules
+}
+from "react-native";
+
+
+const {
+NovaDevice
+}
+=
+NativeModules;
+
+
+
+export default {
+
+
+async battery(){
+
+return await NovaDevice.getBattery();
+
+},
+
+
+
+async info(){
+
+return await NovaDevice.getDeviceInfo();
+
+},
+
+
+
+open(packageName){
+
+NovaDevice.openApp(
+packageName
+);
+
+}
+
+
+};
