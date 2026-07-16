@@ -1,0 +1,19 @@
+# Nova AI Assistant
+
+Nova is a personal AI assistant Android application.
+
+## Features
+
+- Nova AI interface
+- "Hey Nova" activation foundation
+- Voice responses
+- AI backend connection
+- Reminder foundation
+- Memory storage
+- Android APK build support
+
+
+## Install dependencies
+
+```bash
+npm install
