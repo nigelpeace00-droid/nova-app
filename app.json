@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Nova",
+    "slug": "nova-ai-assistant",
+    "version": "1.0.0",
+
+    "orientation": "portrait",
+
+    "android": {
+      "package": "com.nova.aiassistant",
+      "permissions": [
+        "RECORD_AUDIO",
+        "POST_NOTIFICATIONS",
+        "SCHEDULE_EXACT_ALARM"
+      ]
+    },
+
+    "plugins": [
+      "expo-dev-client",
+      "expo-notifications"
+    ]
+  }
+}
